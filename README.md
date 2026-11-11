@@ -64,7 +64,7 @@ project/
 ├── manifest.json                所有路徑都記在這裡（見下）
 ├── config.json                  所有參數都在這裡（見下）
 ├── assets/{任意}/{YYYYMMDDHH}/NN{…}.mp4 gitignore、從雲端下載
-├── venv/                               gitignore、python 路徑在 config 裡 需自行設定
+├── venv/                               gitignore、python 路徑在 manifest 裡 需自行設定 py 直譯器
 ├── src/
 │   ├── run_all/    run_all_main.py     README.md
 │   ├── part_1.5/   part_1.5_main.py    README.md
