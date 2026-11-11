@@ -13,6 +13,37 @@
 
 ## 快速開始
 
+### INTRO
+網址：https://github.com/anunnamedtank24/squid_video_analysis
+下載後可以自行跑一遍，但要補 squid_video_analysis/assets（mp4 from cloud drive）和 venv。請依序執行：
+```bash
+# macOS only
+brew install python@3.12 python-tk@3.12
+
+# 本地專案路徑
+cd $SQUID_VIDEO_ANALYSIS
+
+python3.12 -m venv venv
+venv/bin/pip install -r requirements.txt
+venv/bin/python bin/run_all.py manifest.json $START_MIN $END_MIN
+```
+架構：
+```text
+1.5 檢查 mp4
+→ 2.0 手動點四邊形、右眼、左眼、腹部
+→ 2.5 擷取並拉正
+→ 3.0 追蹤兩眼
+→ 3.5 把眼睛畫回影片
+→ 4.0 找腹部
+→ 4.5 把眼睛＋腹部畫回影片
+→ 5.0 算腹部圓內（固定半徑）顏色／亮度
+→ 5.5 時間－亮度折線圖
+```
+n.0 是運算（json），n.5 是給人看的檢查（影片或圖）。
+可一鍵 run_all，也可用 --start / --end 只跑幾步。
+輸出：output/起始分鐘_結束分鐘/part_X/。
+也可以不跑，直接看 samples 裡的結果（見 smaples）。
+
 ### 1. 環境
 
 ```bash
