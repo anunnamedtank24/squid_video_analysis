@@ -1,0 +1,602 @@
+{
+ "kind": "part_3.5",
+ "start_min": "202605211317",
+ "end_min": "202605211359",
+ "params": {
+  "rmul": 1.2,
+  "radd": 1.0,
+  "scale": 4,
+  "thickness_tracked": 2,
+  "thickness_hold": 1,
+  "colors_bgr": {
+   "right_eye": [
+    0,
+    0,
+    255
+   ],
+   "left_eye": [
+    255,
+    150,
+    0
+   ]
+  },
+  "radius_formula": "畫的半徑 = 追蹤半徑 × rmul + radd（拉正後像素）"
+ },
+ "inputs": {
+  "part_2.5_meta_sha256": "e66133c795923ab66e4792e7b66e051a83cd35e03a1ae8d3dcc869b30885300f",
+  "part_3.0_meta_sha256": "57293a425d35122efd1b7ddb7e8ce9e9bcbbf512f3e553e9c3dd056399ff21c3"
+ },
+ "part_3_status": "complete",
+ "part_3_failed": null,
+ "skipped_minutes": [],
+ "rectified_size": [
+  102,
+  120
+ ],
+ "out_size": [
+  408,
+  480
+ ],
+ "minutes": {
+  "202605211317": {
+   "frames": 1199,
+   "duration_s": 59.894,
+   "fps": 20.002001868410517,
+   "codec": "libx264",
+   "frames_with_part_3_entry": 206,
+   "frames_hold": 993,
+   "part_3_complete": true,
+   "drawn_frame_range": [
+    0,
+    1198
+   ]
+  },
+  "202605211318": {
+   "frames": 1198,
+   "duration_s": 59.844,
+   "fps": 20.002003539586603,
+   "codec": "libx264",
+   "frames_with_part_3_entry": 7,
+   "frames_hold": 1191,
+   "part_3_complete": true,
+   "drawn_frame_range": [
+    0,
+    1197
+   ]
+  },
+  "202605211319": {
+   "frames": 1199,
+   "duration_s": 59.894,
+   "fps": 20.002001868410517,
+   "codec": "libx264",
+   "frames_with_part_3_entry": 405,
+   "frames_hold": 794,
+   "part_3_complete": true,
+   "drawn_frame_range": [
+    0,
+    1198
+   ]
+  },
+  "202605211320": {
+   "frames": 1199,
+   "duration_s": 59.894,
+   "fps": 20.002001868410517,
+   "codec": "libx264",
+   "frames_with_part_3_entry": 403,
+   "frames_hold": 796,
+   "part_3_complete": true,
+   "drawn_frame_range": [
+    0,
+    1198
+   ]
+  },
+  "202605211321": {
+   "frames": 1199,
+   "duration_s": 59.894,
+   "fps": 20.002001868410517,
+   "codec": "libx264",
+   "frames_with_part_3_entry": 7,
+   "frames_hold": 1192,
+   "part_3_complete": true,
+   "drawn_frame_range": [
+    0,
+    1198
+   ]
+  },
+  "202605211322": {
+   "frames": 1200,
+   "duration_s": 59.944,
+   "fps": 20.002000200020003,
+   "codec": "libx264",
+   "frames_with_part_3_entry": 7,
+   "frames_hold": 1193,
+   "part_3_complete": true,
+   "drawn_frame_range": [
+    0,
+    1199
+   ]
+  },
+  "202605211323": {
+   "frames": 1198,
+   "duration_s": 59.844,
+   "fps": 20.002003539586603,
+   "codec": "libx264",
+   "frames_with_part_3_entry": 7,
+   "frames_hold": 1191,
+   "part_3_complete": true,
+   "drawn_frame_range": [
+    0,
+    1197
+   ]
+  },
+  "202605211324": {
+   "frames": 1200,
+   "duration_s": 59.944,
+   "fps": 20.002000200020003,
+   "codec": "libx264",
+   "frames_with_part_3_entry": 7,
+   "frames_hold": 1193,
+   "part_3_complete": true,
+   "drawn_frame_range": [
+    0,
+    1199
+   ]
+  },
+  "202605211325": {
+   "frames": 1198,
+   "duration_s": 59.844,
+   "fps": 20.002003539586603,
+   "codec": "libx264",
+   "frames_with_part_3_entry": 206,
+   "frames_hold": 992,
+   "part_3_complete": true,
+   "drawn_frame_range": [
+    0,
+    1197
+   ]
+  },
+  "202605211326": {
+   "frames": 1199,
+   "duration_s": 59.894,
+   "fps": 20.002001868410517,
+   "codec": "libx264",
+   "frames_with_part_3_entry": 206,
+   "frames_hold": 993,
+   "part_3_complete": true,
+   "drawn_frame_range": [
+    0,
+    1198
+   ]
+  },
+  "202605211327": {
+   "frames": 1199,
+   "duration_s": 59.894,
+   "fps": 20.002001868410517,
+   "codec": "libx264",
+   "frames_with_part_3_entry": 405,
+   "frames_hold": 794,
+   "part_3_complete": true,
+   "drawn_frame_range": [
+    0,
+    1198
+   ]
+  },
+  "202605211328": {
+   "frames": 1199,
+   "duration_s": 59.894,
+   "fps": 20.002001868410517,
+   "codec": "libx264",
+   "frames_with_part_3_entry": 7,
+   "frames_hold": 1192,
+   "part_3_complete": true,
+   "drawn_frame_range": [
+    0,
+    1198
+   ]
+  },
+  "202605211329": {
+   "frames": 1199,
+   "duration_s": 59.894,
+   "fps": 20.002001868410517,
+   "codec": "libx264",
+   "frames_with_part_3_entry": 403,
+   "frames_hold": 796,
+   "part_3_complete": true,
+   "drawn_frame_range": [
+    0,
+    1198
+   ]
+  },
+  "202605211330": {
+   "frames": 1199,
+   "duration_s": 59.894,
+   "fps": 20.002001868410517,
+   "codec": "libx264",
+   "frames_with_part_3_entry": 405,
+   "frames_hold": 794,
+   "part_3_complete": true,
+   "drawn_frame_range": [
+    0,
+    1198
+   ]
+  },
+  "202605211331": {
+   "frames": 1200,
+   "duration_s": 59.944,
+   "fps": 20.002000200020003,
+   "codec": "libx264",
+   "frames_with_part_3_entry": 205,
+   "frames_hold": 995,
+   "part_3_complete": true,
+   "drawn_frame_range": [
+    0,
+    1199
+   ]
+  },
+  "202605211332": {
+   "frames": 1198,
+   "duration_s": 59.844,
+   "fps": 20.002003539586603,
+   "codec": "libx264",
+   "frames_with_part_3_entry": 7,
+   "frames_hold": 1191,
+   "part_3_complete": true,
+   "drawn_frame_range": [
+    0,
+    1197
+   ]
+  },
+  "202605211333": {
+   "frames": 1199,
+   "duration_s": 59.894,
+   "fps": 20.002001868410517,
+   "codec": "libx264",
+   "frames_with_part_3_entry": 405,
+   "frames_hold": 794,
+   "part_3_complete": true,
+   "drawn_frame_range": [
+    0,
+    1198
+   ]
+  },
+  "202605211334": {
+   "frames": 1199,
+   "duration_s": 59.894,
+   "fps": 20.002001868410517,
+   "codec": "libx264",
+   "frames_with_part_3_entry": 7,
+   "frames_hold": 1192,
+   "part_3_complete": true,
+   "drawn_frame_range": [
+    0,
+    1198
+   ]
+  },
+  "202605211335": {
+   "frames": 1199,
+   "duration_s": 59.894,
+   "fps": 20.002001868410517,
+   "codec": "libx264",
+   "frames_with_part_3_entry": 206,
+   "frames_hold": 993,
+   "part_3_complete": true,
+   "drawn_frame_range": [
+    0,
+    1198
+   ]
+  },
+  "202605211336": {
+   "frames": 1199,
+   "duration_s": 59.894,
+   "fps": 20.002001868410517,
+   "codec": "libx264",
+   "frames_with_part_3_entry": 7,
+   "frames_hold": 1192,
+   "part_3_complete": true,
+   "drawn_frame_range": [
+    0,
+    1198
+   ]
+  },
+  "202605211337": {
+   "frames": 1199,
+   "duration_s": 59.894,
+   "fps": 20.002001868410517,
+   "codec": "libx264",
+   "frames_with_part_3_entry": 405,
+   "frames_hold": 794,
+   "part_3_complete": true,
+   "drawn_frame_range": [
+    0,
+    1198
+   ]
+  },
+  "202605211338": {
+   "frames": 1199,
+   "duration_s": 59.894,
+   "fps": 20.002001868410517,
+   "codec": "libx264",
+   "frames_with_part_3_entry": 7,
+   "frames_hold": 1192,
+   "part_3_complete": true,
+   "drawn_frame_range": [
+    0,
+    1198
+   ]
+  },
+  "202605211339": {
+   "frames": 1199,
+   "duration_s": 59.894,
+   "fps": 20.002001868410517,
+   "codec": "libx264",
+   "frames_with_part_3_entry": 206,
+   "frames_hold": 993,
+   "part_3_complete": true,
+   "drawn_frame_range": [
+    0,
+    1198
+   ]
+  },
+  "202605211340": {
+   "frames": 1199,
+   "duration_s": 59.894,
+   "fps": 20.002001868410517,
+   "codec": "libx264",
+   "frames_with_part_3_entry": 204,
+   "frames_hold": 995,
+   "part_3_complete": true,
+   "drawn_frame_range": [
+    0,
+    1198
+   ]
+  },
+  "202605211341": {
+   "frames": 1200,
+   "duration_s": 59.944,
+   "fps": 20.002000200020003,
+   "codec": "libx264",
+   "frames_with_part_3_entry": 206,
+   "frames_hold": 994,
+   "part_3_complete": true,
+   "drawn_frame_range": [
+    0,
+    1199
+   ]
+  },
+  "202605211342": {
+   "frames": 1198,
+   "duration_s": 59.844,
+   "fps": 20.002003539586603,
+   "codec": "libx264",
+   "frames_with_part_3_entry": 206,
+   "frames_hold": 992,
+   "part_3_complete": true,
+   "drawn_frame_range": [
+    0,
+    1197
+   ]
+  },
+  "202605211343": {
+   "frames": 1200,
+   "duration_s": 59.944,
+   "fps": 20.002000200020003,
+   "codec": "libx264",
+   "frames_with_part_3_entry": 404,
+   "frames_hold": 796,
+   "part_3_complete": true,
+   "drawn_frame_range": [
+    0,
+    1199
+   ]
+  },
+  "202605211344": {
+   "frames": 1198,
+   "duration_s": 59.844,
+   "fps": 20.002003539586603,
+   "codec": "libx264",
+   "frames_with_part_3_entry": 405,
+   "frames_hold": 793,
+   "part_3_complete": true,
+   "drawn_frame_range": [
+    0,
+    1197
+   ]
+  },
+  "202605211345": {
+   "frames": 1199,
+   "duration_s": 59.894,
+   "fps": 20.002001868410517,
+   "codec": "libx264",
+   "frames_with_part_3_entry": 206,
+   "frames_hold": 993,
+   "part_3_complete": true,
+   "drawn_frame_range": [
+    0,
+    1198
+   ]
+  },
+  "202605211346": {
+   "frames": 1199,
+   "duration_s": 59.894,
+   "fps": 20.002001868410517,
+   "codec": "libx264",
+   "frames_with_part_3_entry": 7,
+   "frames_hold": 1192,
+   "part_3_complete": true,
+   "drawn_frame_range": [
+    0,
+    1198
+   ]
+  },
+  "202605211347": {
+   "frames": 1200,
+   "duration_s": 59.944,
+   "fps": 20.002000200020003,
+   "codec": "libx264",
+   "frames_with_part_3_entry": 405,
+   "frames_hold": 795,
+   "part_3_complete": true,
+   "drawn_frame_range": [
+    0,
+    1199
+   ]
+  },
+  "202605211348": {
+   "frames": 1198,
+   "duration_s": 59.844,
+   "fps": 20.002003539586603,
+   "codec": "libx264",
+   "frames_with_part_3_entry": 7,
+   "frames_hold": 1191,
+   "part_3_complete": true,
+   "drawn_frame_range": [
+    0,
+    1197
+   ]
+  },
+  "202605211349": {
+   "frames": 1199,
+   "duration_s": 59.894,
+   "fps": 20.002001868410517,
+   "codec": "libx264",
+   "frames_with_part_3_entry": 405,
+   "frames_hold": 794,
+   "part_3_complete": true,
+   "drawn_frame_range": [
+    0,
+    1198
+   ]
+  },
+  "202605211350": {
+   "frames": 1199,
+   "duration_s": 59.894,
+   "fps": 20.002001868410517,
+   "codec": "libx264",
+   "frames_with_part_3_entry": 7,
+   "frames_hold": 1192,
+   "part_3_complete": true,
+   "drawn_frame_range": [
+    0,
+    1198
+   ]
+  },
+  "202605211351": {
+   "frames": 1199,
+   "duration_s": 59.894,
+   "fps": 20.002001868410517,
+   "codec": "libx264",
+   "frames_with_part_3_entry": 204,
+   "frames_hold": 995,
+   "part_3_complete": true,
+   "drawn_frame_range": [
+    0,
+    1198
+   ]
+  },
+  "202605211352": {
+   "frames": 1200,
+   "duration_s": 59.944,
+   "fps": 20.002000200020003,
+   "codec": "libx264",
+   "frames_with_part_3_entry": 206,
+   "frames_hold": 994,
+   "part_3_complete": true,
+   "drawn_frame_range": [
+    0,
+    1199
+   ]
+  },
+  "202605211353": {
+   "frames": 1198,
+   "duration_s": 59.844,
+   "fps": 20.002003539586603,
+   "codec": "libx264",
+   "frames_with_part_3_entry": 7,
+   "frames_hold": 1191,
+   "part_3_complete": true,
+   "drawn_frame_range": [
+    0,
+    1197
+   ]
+  },
+  "202605211354": {
+   "frames": 1199,
+   "duration_s": 59.894,
+   "fps": 20.002001868410517,
+   "codec": "libx264",
+   "frames_with_part_3_entry": 7,
+   "frames_hold": 1192,
+   "part_3_complete": true,
+   "drawn_frame_range": [
+    0,
+    1198
+   ]
+  },
+  "202605211355": {
+   "frames": 1199,
+   "duration_s": 59.894,
+   "fps": 20.002001868410517,
+   "codec": "libx264",
+   "frames_with_part_3_entry": 7,
+   "frames_hold": 1192,
+   "part_3_complete": true,
+   "drawn_frame_range": [
+    0,
+    1198
+   ]
+  },
+  "202605211356": {
+   "frames": 1199,
+   "duration_s": 59.894,
+   "fps": 20.002001868410517,
+   "codec": "libx264",
+   "frames_with_part_3_entry": 7,
+   "frames_hold": 1192,
+   "part_3_complete": true,
+   "drawn_frame_range": [
+    0,
+    1198
+   ]
+  },
+  "202605211357": {
+   "frames": 1199,
+   "duration_s": 59.894,
+   "fps": 20.002001868410517,
+   "codec": "libx264",
+   "frames_with_part_3_entry": 7,
+   "frames_hold": 1192,
+   "part_3_complete": true,
+   "drawn_frame_range": [
+    0,
+    1198
+   ]
+  },
+  "202605211358": {
+   "frames": 1179,
+   "duration_s": 58.894,
+   "fps": 20.002035830618894,
+   "codec": "libx264",
+   "frames_with_part_3_entry": 405,
+   "frames_hold": 774,
+   "part_3_complete": true,
+   "drawn_frame_range": [
+    0,
+    1178
+   ]
+  },
+  "202605211359": {
+   "frames": 1199,
+   "duration_s": 59.894,
+   "fps": 20.002001868410517,
+   "codec": "libx264",
+   "frames_with_part_3_entry": 7,
+   "frames_hold": 1192,
+   "part_3_complete": true,
+   "drawn_frame_range": [
+    0,
+    1198
+   ]
+  }
+ },
+ "created_at": "2026-11-11T19:50:50"
+}

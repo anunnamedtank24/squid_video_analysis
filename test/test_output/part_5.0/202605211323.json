@@ -1,0 +1,128 @@
+{
+ "2026-05-21T13:23:00.000": {
+  "mean": 186.321,
+  "std": 8.888,
+  "bg_mean": 186.541,
+  "contrast": 0.22,
+  "mean_b": 184.321,
+  "mean_g": 187.821,
+  "mean_r": 184.321,
+  "n_pixels": 28,
+  "r": 3.0,
+  "status": "ok",
+  "body_status": "detected",
+  "frame": 0,
+  "body": [
+   75.39,
+   59.879
+  ]
+ },
+ "2026-05-21T13:23:09.999": {
+  "mean": 188.724,
+  "std": 2.099,
+  "bg_mean": 187.565,
+  "contrast": -1.16,
+  "mean_b": 186.724,
+  "mean_g": 190.207,
+  "mean_r": 186.724,
+  "n_pixels": 29,
+  "r": 3.0,
+  "status": "ok",
+  "body_status": "predicted",
+  "frame": 200,
+  "body": [
+   74.345,
+   60.201
+  ]
+ },
+ "2026-05-21T13:23:19.998": {
+  "mean": 148.107,
+  "std": 11.833,
+  "bg_mean": 175.969,
+  "contrast": 27.862,
+  "mean_b": 146.107,
+  "mean_g": 149.607,
+  "mean_r": 146.107,
+  "n_pixels": 28,
+  "r": 3.0,
+  "status": "ok",
+  "body_status": "detected",
+  "frame": 400,
+  "body": [
+   84.142,
+   43.865
+  ]
+ },
+ "2026-05-21T13:23:29.997": {
+  "mean": 183.724,
+  "std": 16.708,
+  "bg_mean": 189.375,
+  "contrast": 5.651,
+  "mean_b": 181.724,
+  "mean_g": 185.276,
+  "mean_r": 181.724,
+  "n_pixels": 29,
+  "r": 3.0,
+  "status": "ok",
+  "body_status": "detected",
+  "frame": 600,
+  "body": [
+   89.809,
+   48.008
+  ]
+ },
+ "2026-05-21T13:23:39.996": {
+  "mean": 155.179,
+  "std": 14.828,
+  "bg_mean": 180.049,
+  "contrast": 24.871,
+  "mean_b": 153.179,
+  "mean_g": 156.786,
+  "mean_r": 153.179,
+  "n_pixels": 28,
+  "r": 3.0,
+  "status": "ok",
+  "body_status": "detected",
+  "frame": 800,
+  "body": [
+   83.621,
+   43.142
+  ]
+ },
+ "2026-05-21T13:23:49.995": {
+  "mean": 143.222,
+  "std": 3.775,
+  "bg_mean": 174.468,
+  "contrast": 31.246,
+  "mean_b": 141.222,
+  "mean_g": 144.704,
+  "mean_r": 141.222,
+  "n_pixels": 27,
+  "r": 3.0,
+  "status": "ok",
+  "body_status": "detected",
+  "frame": 1000,
+  "body": [
+   83.634,
+   45.051
+  ]
+ },
+ "2026-05-21T13:23:59.844": {
+  "mean": 140.207,
+  "std": 4.723,
+  "bg_mean": 169.462,
+  "contrast": 29.255,
+  "mean_b": 138.207,
+  "mean_g": 141.793,
+  "mean_r": 138.207,
+  "n_pixels": 29,
+  "r": 3.0,
+  "status": "ok",
+  "body_status": "detected",
+  "frame": 1197,
+  "body": [
+   84.23,
+   42.416
+  ]
+ }
+}

@@ -1,0 +1,41 @@
+{
+  "schema_version": 2,
+  "kind": "roi_quad",
+  "start_min": "202605211317",
+  "end_min": "202605211359",
+  "frame_size": [
+    2304,
+    1296
+  ],
+  "reference_minute": "202605211317",
+  "rectified_size": [
+    102,
+    120
+  ],
+  "coordinate_system": "原始 mp4 影格像素，原點在左上角（像素 i 佔 [i, i+1)），x 向右、y 向下",
+  "order": [
+    "top_left",
+    "top_right",
+    "bottom_right",
+    "bottom_left"
+  ],
+  "points": [
+    [
+      797.0,
+      810.8
+    ],
+    [
+      883.6,
+      808.6
+    ],
+    [
+      919.1,
+      921.0
+    ],
+    [
+      803.8,
+      932.3
+    ]
+  ],
+  "saved_at": "2026-11-11T19:46:29"
+}

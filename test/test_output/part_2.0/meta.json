@@ -1,0 +1,31 @@
+{
+ "kind": "part_2.0",
+ "start_min": "202605211317",
+ "end_min": "202605211359",
+ "params": {
+  "seed_search_px": 10.0
+ },
+ "blob_params": {
+  "polarity": "dark",
+  "margin": 0.1,
+  "r_min": 1.0,
+  "r_max": 14.0,
+  "sigma_k": 1.4,
+  "k_z": 2.5,
+  "max_cand": 12,
+  "z_cap": 200.0,
+  "fit_rays": 24,
+  "fit_rmax_mul": 2.2,
+  "fit_smooth": 0.6
+ },
+ "inputs": {
+  "part_1.5_meta_sha256": "228fa2f9500f47d0659f9e23cc9bd5fc89c8623133c0c98da974efaa574d8927"
+ },
+ "roi_reference_minute": "202605211317",
+ "seed_minute": "202605211317",
+ "rectified_size": [
+  102,
+  120
+ ],
+ "created_at": "2026-11-11T19:46:38"
+}

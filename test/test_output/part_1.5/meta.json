@@ -1,0 +1,22 @@
+{
+ "kind": "part_1.5",
+ "start_min": "202605211317",
+ "end_min": "202605211359",
+ "params": {
+  "duration_s": 60.0,
+  "tolerance_s": 2.0
+ },
+ "inputs": {
+  "assets_dir": "/Users/jerry/Mine/3_code/2_playground/squid_video_analysis/assets"
+ },
+ "frame_size": [
+  2304,
+  1296
+ ],
+ "stats": {
+  "minutes": 43,
+  "duration_min_s": 58.944,
+  "duration_max_s": 59.994
+ },
+ "created_at": "2026-11-11T19:45:19"
+}

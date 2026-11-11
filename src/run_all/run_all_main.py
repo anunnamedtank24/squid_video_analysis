@@ -9,7 +9,7 @@ from pathlib import Path
 
 sys.dont_write_bytecode = True
 
-USAGE_STR = ("run_all：依序跑 part_1.5 → part_4.0\n用法：python src/run_all/run_all_main.py MANIFEST_JSON START_MIN END_MIN [--start PART] [--end PART]\n"
+USAGE_STR = ("run_all：依序跑 part_1.5 → part_5.5\n用法：python src/run_all/run_all_main.py MANIFEST_JSON START_MIN END_MIN [--start PART] [--end PART]\n"
              "例：只跑 part_2.5 到 part_3.5 → --start 2.5 --end 3.5")
 
 
@@ -33,7 +33,9 @@ if __name__ == "__main__":
 from tool_manifest import PART_STR_TUPLE, get_args_ns_from_argv_strs, info, run_main_stage, success, warn
 
 PART_LABEL_DICT = {"part_1.5": "檢查時間範圍與 mp4（長度、解析度、每分鐘一個）", "part_2.0": "視窗一：選四邊形；視窗二：點右眼、左眼、腹部",
-                   "part_2.5": "拉正 mp4", "part_3.0": "追蹤右眼、左眼、腹部", "part_3.5": "把圓畫回影片", "part_4.0": "腹部附近的亮度"}
+                   "part_2.5": "拉正 mp4", "part_3.0": "追蹤右眼、左眼", "part_3.5": "把眼睛畫回影片", "part_4.0": "在以雙眼為準的橢圓內找腹部",
+                   "part_4.5": "把眼睛與腹部畫回影片", "part_5.0": "腹部圓心、固定半徑內的平均顏色",
+                   "part_5.5": "畫「時間 — 亮暗度」折線圖"}
 INTERRUPT_CODE_INT = 130
 
 
@@ -104,7 +106,7 @@ def run_all_stages(argv_strs: list[str]) -> None:
             continue
         print(f"\n[Error] {part_str} 失敗（exit code {code_int}），整個流程停止", file=sys.stderr, flush=True)
         if part_str == "part_3.0" and "part_3.5" in selected_part_strs and code_int != INTERRUPT_CODE_INT:
-            info("先用 part_3.0 已有的結果跑 part_3.5（只畫到失敗那一幀，黃圈 = 邊界幀每隻眼允許出現的範圍，黃框 = 一般幀的搜尋範圍），方便你調參數")
+            info("先用 part_3.0 已有的結果跑 part_3.5（失敗那一幀起不畫圓，左上角標出 FAILED），方便你調參數")
             part_3_5_code_int = run_part_stage("part_3.5", get_cmd_strs_from_part_str("part_3.5", manifest_dict, script_path_dict, args_ns), selected_part_strs)
             if part_3_5_code_int != 0:
                 warn(f"part_3.5 也失敗了（exit code {part_3_5_code_int}，見上）")

@@ -1,0 +1,170 @@
+[
+ {
+  "time": "2026-05-21T13:21:00.000",
+  "minute": "202605211321",
+  "frame": 0,
+  "sec": 0.0,
+  "kind": "sample",
+  "retry_k": 0,
+  "right_eye": [
+   57.644,
+   64.491
+  ],
+  "right_eye_r": 2.475,
+  "left_eye": [
+   67.263,
+   79.806
+  ],
+  "left_eye_r": 2.243,
+  "eye_score": 74.239,
+  "eye_z": 68.753,
+  "fit": {
+   "right_eye": "edge",
+   "left_eye": "edge"
+  }
+ },
+ {
+  "time": "2026-05-21T13:21:09.999",
+  "minute": "202605211321",
+  "frame": 200,
+  "sec": 9.999,
+  "kind": "sample",
+  "retry_k": 0,
+  "right_eye": [
+   58.359,
+   64.382
+  ],
+  "right_eye_r": 2.754,
+  "left_eye": [
+   67.415,
+   79.258
+  ],
+  "left_eye_r": 2.897,
+  "eye_score": 73.235,
+  "eye_z": 62.295,
+  "fit": {
+   "right_eye": "edge",
+   "left_eye": "edge"
+  }
+ },
+ {
+  "time": "2026-05-21T13:21:19.998",
+  "minute": "202605211321",
+  "frame": 400,
+  "sec": 19.998,
+  "kind": "sample",
+  "retry_k": 0,
+  "right_eye": [
+   57.663,
+   65.068
+  ],
+  "right_eye_r": 2.68,
+  "left_eye": [
+   67.409,
+   79.93
+  ],
+  "left_eye_r": 2.327,
+  "eye_score": 82.848,
+  "eye_z": 73.578,
+  "fit": {
+   "right_eye": "edge",
+   "left_eye": "edge"
+  }
+ },
+ {
+  "time": "2026-05-21T13:21:29.997",
+  "minute": "202605211321",
+  "frame": 600,
+  "sec": 29.997,
+  "kind": "sample",
+  "retry_k": 0,
+  "right_eye": [
+   57.983,
+   64.193
+  ],
+  "right_eye_r": 2.446,
+  "left_eye": [
+   67.794,
+   80.048
+  ],
+  "left_eye_r": 2.248,
+  "eye_score": 70.658,
+  "eye_z": 69.38,
+  "fit": {
+   "right_eye": "edge",
+   "left_eye": "edge"
+  }
+ },
+ {
+  "time": "2026-05-21T13:21:39.996",
+  "minute": "202605211321",
+  "frame": 800,
+  "sec": 39.996,
+  "kind": "sample",
+  "retry_k": 0,
+  "right_eye": [
+   57.614,
+   64.786
+  ],
+  "right_eye_r": 2.487,
+  "left_eye": [
+   67.908,
+   79.964
+  ],
+  "left_eye_r": 2.401,
+  "eye_score": 73.552,
+  "eye_z": 70.149,
+  "fit": {
+   "right_eye": "edge",
+   "left_eye": "edge"
+  }
+ },
+ {
+  "time": "2026-05-21T13:21:49.995",
+  "minute": "202605211321",
+  "frame": 1000,
+  "sec": 49.995,
+  "kind": "sample",
+  "retry_k": 0,
+  "right_eye": [
+   57.868,
+   64.622
+  ],
+  "right_eye_r": 2.787,
+  "left_eye": [
+   67.478,
+   79.767
+  ],
+  "left_eye_r": 2.489,
+  "eye_score": 76.858,
+  "eye_z": 60.535,
+  "fit": {
+   "right_eye": "edge",
+   "left_eye": "edge"
+  }
+ },
+ {
+  "time": "2026-05-21T13:21:59.894",
+  "minute": "202605211321",
+  "frame": 1198,
+  "sec": 59.894,
+  "kind": "sample",
+  "retry_k": 0,
+  "right_eye": [
+   57.533,
+   63.76
+  ],
+  "right_eye_r": 2.911,
+  "left_eye": [
+   67.42,
+   79.626
+  ],
+  "left_eye_r": 2.396,
+  "eye_score": 71.805,
+  "eye_z": 59.964,
+  "fit": {
+   "right_eye": "edge",
+   "left_eye": "edge"
+  }
+ }
+]

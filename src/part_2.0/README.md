@@ -16,7 +16,7 @@
 | --- | --- |
 | 腳本 | `src/part_2.0/part_2.0_main.py` |
 | 上游 | [part_1.5](../part_1.5/README.md)（只檢查它的結果，不再檢查 mp4） |
-| 下游 | [part_2.5](../part_2.5/README.md)（讀 `roi.json`）、[part_3.0](../part_3.0/README.md)（讀 `seed.json`） |
+| 下游 | [part_2.5](../part_2.5/README.md)（讀 `roi.json`）、[part_3.0](../part_3.0/README.md)（讀 `seed.json` 的兩眼）、[part_4.0](../part_4.0/README.md)（讀 `seed.json` 的腹部相對位置 `rel`） |
 | 需要 | tkinter + Pillow（`check_tk_is_available`；macOS 沒有時：`brew install python-tk@3.12`，並用該版本的 python 建 venv、`pip install Pillow`） |
 
 ## 用法
@@ -34,7 +34,7 @@ python src/part_2.0/part_2.0_main.py manifest.json 202605211317 202605211359
 | `START_MIN` / `END_MIN` | 必須與 part_1.5 相同 |
 | `part_1.5/{files.json, meta.json}` | 上游結果；`meta.json` 必須存在且完成 |
 | `config.json` 的 `part_2.0` | 見下 |
-| `config.json` 的 `part_3.0` 中「找點」的參數 | `polarity`、`margin`、`r_min`、`r_max`、`sigma_k`、`k_z`、`z_cap`、`fit_*`… 與 part_3.0 **共用同一份**，視窗二抓回中心用的就是它們（啟動時會印出卷積的尺度範圍） |
+| `config.json` 的 `part_3.0` 中「找點」的參數 | `polarity`、`margin`、`r_min`、`r_max`、`sigma_k`、`k_z`、`z_cap`、`fit_*`… 與 part_3.0 **共用同一份**（part_4.0 有自己的一份），視窗二抓回中心用的就是它們（啟動時會印出卷積的尺度範圍） |
 
 ## 輸出
 
@@ -63,7 +63,7 @@ python src/part_2.0/part_2.0_main.py manifest.json 202605211317 202605211359
 | `fit` | 各點的擬合方法：`scale`（只有尺度）／`edge`（邊緣擬合圓）／`ray`（射線取中位數半徑） |
 | `rel` | 腹部相對兩眼：`u`、`v`、`belly_r_rel`、`right_eye_r_rel`、`left_eye_r_rel`、`eye_dist_px`（定義見下） |
 
-座標 = **拉正後影格像素，像素中心在整數**（OpenCV / numpy 慣例，與 part_3.0 / 3.5 / 4.0 相同）。
+座標 = **拉正後影格像素，像素中心在整數**（OpenCV / numpy 慣例，與 part_3.0 / 3.5 / 4.0 / 4.5 / 5.0 相同）。
 
 > [!NOTE]
 > 兩個檔案的座標慣例不同：`roi.json` 是 UI 慣例（像素 `i` 佔 `[i, i+1)`），`seed.json` 是像素中心在整數。轉換已在程式內處理（差 0.5 px）。
@@ -83,7 +83,7 @@ v     = (腹部 − m) · n_hat / d
 半徑比 = r / d
 ```
 
-part_3.0 用它當**起始**值預測腹部位置，之後會隨追蹤更新（見 [part_3.0](../part_3.0/README.md#3-找腹部)）。
+part_4.0 用它決定腹部允許範圍（橢圓）的中心（固定不變），也當推算用的 `rel` 的**起始**值，之後推算用的 `rel` 會隨追蹤更新（見 [part_4.0](../part_4.0/README.md#允許範圍以雙眼為準的橢圓)）。
 
 ## config.json 的 `part_2.0`
 

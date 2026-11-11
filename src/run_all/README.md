@@ -1,6 +1,6 @@
 # run_all
 
-依序執行整條流程 `part_1.5 → part_2.0 → part_2.5 → part_3.0 → part_3.5 → part_4.0`，同一個時間範圍、同一個 manifest。
+依序執行整條流程 `part_1.5 → part_2.0 → part_2.5 → part_3.0 → part_3.5 → part_4.0 → part_4.5 → part_5.0 → part_5.5`，同一個時間範圍、同一個 manifest。
 
 | 項目 | 內容 |
 | --- | --- |
@@ -24,17 +24,20 @@ python src/run_all/run_all_main.py manifest.json 202605211317 202605211359 --sta
 | `MANIFEST_JSON` | manifest.json 的路徑（相對於目前工作目錄，或絕對路徑）。格式見 [tool/README.md](../tool/README.md#manifestjson) |
 | `START_MIN` / `END_MIN` | 完整 12 位 `YYYYMMDDHHMM`，含頭尾，`START_MIN ≤ END_MIN` |
 | `--start PART`（選填） | 從這個 part 開始跑（含）。`2.5` 或 `part_2.5` 都可以；預設 `part_1.5` |
-| `--end PART`（選填） | 跑到這個 part 為止（含）。預設 `part_4.0` |
+| `--end PART`（選填） | 跑到這個 part 為止（含）。預設 `part_5.5` |
 
-可用的 PART：`1.5`、`2.0`、`2.5`、`3.0`、`3.5`、`4.0`。
+可用的 PART：`1.5`、`2.0`、`2.5`、`3.0`、`3.5`、`4.0`、`4.5`、`5.0`、`5.5`。
 
 | `--start` / `--end` | 跑哪些 part |
 | --- | --- |
-| 都不給 | 全部（`1.5 → … → 4.0`） |
-| `--start 2.5` | `2.5 → 3.0 → 3.5 → 4.0` |
-| `--end 3.5` | `1.5 → 2.0 → 2.5 → 3.0 → 3.5` |
+| 都不給 | 全部（`1.5 → … → 5.5`） |
+| `--start 2.5` | `2.5 → 3.0 → 3.5 → 4.0 → 4.5 → 5.0 → 5.5` |
+| `--end 3.5` | `1.5 → 2.0 → 2.5 → 3.0 → 3.5`（只做到眼睛） |
 | `--start 2.5 --end 3.5` | `2.5 → 3.0 → 3.5` |
 | `--start 3.0 --end 3.0` | 只有 `3.0`（調 part_3.0 參數時重跑用） |
+| `--start 4.0 --end 4.5` | 只重找腹部並畫回影片（眼睛已經追蹤好，調腹部參數時用） |
+| `--start 5.0 --end 5.5` | 只重算顏色與重畫折線圖（調 `part_5.0.r` 等時用） |
+| `--start 5.5 --end 5.5` | 只重畫折線圖（調 `part_5.5` 的畫圖參數時用） |
 
 > [!NOTE]
 > 沒被選到的 part 視為「已完成」，run_all 不檢查它們；各 part 自己會檢查上游的 `meta.json`（含 sha256），上游沒跑過或版本不一致就報錯。
@@ -46,24 +49,30 @@ python src/run_all/run_all_main.py manifest.json 202605211317 202605211359 --sta
 flowchart LR
     A["part_1.5<br/>檢查 mp4"] --> B["part_2.0<br/>選四邊形 + 點種子"]
     B --> C["part_2.5<br/>拉正 mp4"]
-    C --> D["part_3.0<br/>追蹤眼睛 / 腹部"]
-    D --> E["part_3.5<br/>畫圓回影片"]
-    D --> F["part_4.0<br/>腹部亮度"]
+    C --> D["part_3.0<br/>追蹤眼睛"]
+    D --> E["part_3.5<br/>畫眼睛"]
+    D --> F["part_4.0<br/>找腹部"]
+    F --> G["part_4.5<br/>畫眼睛 + 腹部"]
+    F --> H["part_5.0<br/>腹部顏色"]
+    H --> I["part_5.5<br/>時間—亮暗度折線圖"]
     D -. 失敗時仍會跑 .-> E
     style D stroke-width:3px
 ```
 
 > [!NOTE]
-> 實際順序是 `…→ part_3.0 → part_3.5 → part_4.0`（序列執行）；圖中 part_3.5 與 part_4.0 並列只是表示兩者都只依賴 part_3.0 的結果。
+> 實際順序是 `…→ part_3.0 → part_3.5 → part_4.0 → part_4.5 → part_5.0 → part_5.5`（序列執行）。圖中 part_3.5 是眼睛的檢查，part_4.5 是眼睛 + 腹部的檢查，part_5.0 是最終結果（數字），part_5.5 把它畫成圖；檢查用的 part（3.5、4.5）都不影響後面的結果。
 
 各 part 的說明：
 
 1. [part_1.5](../part_1.5/README.md) — 檢查範圍與 mp4，寫 `files.json`；唯一會問「要覆蓋嗎」的地方
 2. [part_2.0](../part_2.0/README.md) — 互動 UI：選四邊形、點右眼 / 左眼 / 腹部
 3. [part_2.5](../part_2.5/README.md) — 依四邊形把每分鐘 mp4 拉正
-4. [part_3.0](../part_3.0/README.md) — 追蹤右眼、左眼、腹部
-5. [part_3.5](../part_3.5/README.md) — 把追蹤結果畫回影片，給人檢查
-6. [part_4.0](../part_4.0/README.md) — 腹部附近的亮度統計
+4. [part_3.0](../part_3.0/README.md) — 追蹤右眼、左眼
+5. [part_3.5](../part_3.5/README.md) — 把眼睛畫回影片，給人檢查
+6. [part_4.0](../part_4.0/README.md) — 依眼睛在橢圓範圍內找腹部
+7. [part_4.5](../part_4.5/README.md) — 把眼睛與腹部（含橢圓）畫回影片，給人檢查
+8. [part_5.0](../part_5.0/README.md) — 腹部圓心、固定半徑內的平均顏色
+9. [part_5.5](../part_5.5/README.md) — 時間 — 亮暗度折線圖（PNG）
 
 ## 行為
 
@@ -81,13 +90,13 @@ flowchart LR
 | 情況 | 行為 | 結束碼 |
 | --- | --- | --- |
 | 某個 part 以非 0 結束 | 立刻停止，後面的 part 不跑 | 與該 part 相同 |
-| **part_3.0 失敗**（Ctrl-C 除外） | 若 part_3.5 在要跑的範圍內（`--end` 沒有停在 3.0），先跑一次 part_3.5，把 part_3.0 已追蹤的部分畫出來，再結束；**不會**跑 part_4.0 | part_3.0 的結束碼 |
+| **part_3.0 失敗**（Ctrl-C 除外） | 若 part_3.5 在要跑的範圍內（`--end` 沒有停在 3.0），先跑一次 part_3.5，把 part_3.0 已追蹤的部分畫出來（失敗那一幀起不畫圓），再結束；**不會**跑 part_4.0 起的後面各步 | part_3.0 的結束碼 |
 | part_3.5（上述補跑）也失敗 | 只印 `[Warn]`，不影響結束碼 | 仍是 part_3.0 的結束碼 |
 | Ctrl-C | 訊號同時送到子行程；本腳本等子行程收尾（例如 part_3.0 要把已有結果存下來）後結束；再按一次 Ctrl-C 則強制 kill | 130 |
 
 > [!TIP]
-> part_3.0 的參數要靠看結果調，所以它是**邊跑邊寫** `meta.json` 的：失敗時會留下已追蹤的部分，part_3.5 能畫到失敗那一幀，
-> 並用黃色圈（允許移動範圍）或黃框（搜尋範圍）標出它在哪裡找不到。細節見 [part_3.0 的「失敗時」](../part_3.0/README.md#失敗時)。
+> 眼睛追蹤（part_3.0）的參數要靠看結果調，所以它是**邊跑邊寫** `meta.json` 的：失敗時會留下已追蹤的部分，part_3.5 能畫到失敗那一幀，
+> 假設在 a 分鐘 b 秒開始失敗，第 a 分鐘的影片仍會輸出，但從第 b 秒起不畫。細節見 [part_3.0 的「失敗時」](../part_3.0/README.md#失敗時)。
 
 ## 輸出的版面
 
@@ -101,7 +110,10 @@ output/
     ├── part_2.5/   mp4s/{分鐘}.mp4, meta.json
     ├── part_3.0/   {分鐘}.json, meta.json
     ├── part_3.5/   mp4s/{分鐘}.mp4, meta.json
-    └── part_4.0/   {分鐘}.json, meta.json
+    ├── part_4.0/   {分鐘}.json, meta.json
+    ├── part_4.5/   mp4s/{分鐘}.mp4, meta.json
+    ├── part_5.0/   {分鐘}.json, meta.json
+    └── part_5.5/   brightness.png, meta.json
 ```
 
 ## 畫面輸出

@@ -1,0 +1,439 @@
+{
+ "kind": "part_5.0",
+ "start_min": "202605211317",
+ "end_min": "202605211359",
+ "params": {
+  "r": 3.0,
+  "ring": [
+   1.0,
+   3.0
+  ],
+  "unit": "拉正後影格像素；顏色與亮度 = 0~255（mean = 灰階；mean_b / mean_g / mean_r = 圓內各通道平均）"
+ },
+ "inputs": {
+  "part_2.5_meta_sha256": "e66133c795923ab66e4792e7b66e051a83cd35e03a1ae8d3dcc869b30885300f",
+  "part_4.0_meta_sha256": "29bf2491a3e3ffc2de9c65222bebb6ae7e1661fbe38e9438438dd9221eee4b9c"
+ },
+ "minutes": {
+  "202605211317": {
+   "entries": 206,
+   "by_status": {
+    "ok": 206
+   },
+   "by_body_status": {
+    "detected": 179,
+    "predicted": 27
+   }
+  },
+  "202605211318": {
+   "entries": 7,
+   "by_status": {
+    "ok": 7
+   },
+   "by_body_status": {
+    "detected": 6,
+    "predicted": 1
+   }
+  },
+  "202605211319": {
+   "entries": 405,
+   "by_status": {
+    "ok": 405
+   },
+   "by_body_status": {
+    "detected": 360,
+    "predicted": 45
+   }
+  },
+  "202605211320": {
+   "entries": 403,
+   "by_status": {
+    "ok": 403
+   },
+   "by_body_status": {
+    "detected": 387,
+    "predicted": 16
+   }
+  },
+  "202605211321": {
+   "entries": 7,
+   "by_status": {
+    "ok": 7
+   },
+   "by_body_status": {
+    "detected": 7
+   }
+  },
+  "202605211322": {
+   "entries": 7,
+   "by_status": {
+    "ok": 7
+   },
+   "by_body_status": {
+    "detected": 7
+   }
+  },
+  "202605211323": {
+   "entries": 7,
+   "by_status": {
+    "ok": 7
+   },
+   "by_body_status": {
+    "detected": 6,
+    "predicted": 1
+   }
+  },
+  "202605211324": {
+   "entries": 7,
+   "by_status": {
+    "ok": 7
+   },
+   "by_body_status": {
+    "predicted": 2,
+    "detected": 5
+   }
+  },
+  "202605211325": {
+   "entries": 206,
+   "by_status": {
+    "ok": 206
+   },
+   "by_body_status": {
+    "detected": 188,
+    "predicted": 18
+   }
+  },
+  "202605211326": {
+   "entries": 206,
+   "by_status": {
+    "ok": 206
+   },
+   "by_body_status": {
+    "predicted": 4,
+    "detected": 202
+   }
+  },
+  "202605211327": {
+   "entries": 405,
+   "by_status": {
+    "ok": 405
+   },
+   "by_body_status": {
+    "detected": 394,
+    "predicted": 11
+   }
+  },
+  "202605211328": {
+   "entries": 7,
+   "by_status": {
+    "ok": 7
+   },
+   "by_body_status": {
+    "detected": 7
+   }
+  },
+  "202605211329": {
+   "entries": 403,
+   "by_status": {
+    "ok": 403
+   },
+   "by_body_status": {
+    "predicted": 2,
+    "detected": 401
+   }
+  },
+  "202605211330": {
+   "entries": 405,
+   "by_status": {
+    "ok": 405
+   },
+   "by_body_status": {
+    "detected": 389,
+    "predicted": 16
+   }
+  },
+  "202605211331": {
+   "entries": 205,
+   "by_status": {
+    "ok": 205
+   },
+   "by_body_status": {
+    "predicted": 5,
+    "detected": 200
+   }
+  },
+  "202605211332": {
+   "entries": 7,
+   "by_status": {
+    "ok": 7
+   },
+   "by_body_status": {
+    "detected": 7
+   }
+  },
+  "202605211333": {
+   "entries": 405,
+   "by_status": {
+    "ok": 405
+   },
+   "by_body_status": {
+    "detected": 399,
+    "predicted": 6
+   }
+  },
+  "202605211334": {
+   "entries": 7,
+   "by_status": {
+    "ok": 7
+   },
+   "by_body_status": {
+    "detected": 7
+   }
+  },
+  "202605211335": {
+   "entries": 206,
+   "by_status": {
+    "ok": 206
+   },
+   "by_body_status": {
+    "detected": 206
+   }
+  },
+  "202605211336": {
+   "entries": 7,
+   "by_status": {
+    "ok": 7
+   },
+   "by_body_status": {
+    "detected": 5,
+    "predicted": 2
+   }
+  },
+  "202605211337": {
+   "entries": 405,
+   "by_status": {
+    "ok": 405
+   },
+   "by_body_status": {
+    "predicted": 4,
+    "detected": 401
+   }
+  },
+  "202605211338": {
+   "entries": 7,
+   "by_status": {
+    "ok": 7
+   },
+   "by_body_status": {
+    "detected": 7
+   }
+  },
+  "202605211339": {
+   "entries": 206,
+   "by_status": {
+    "ok": 206
+   },
+   "by_body_status": {
+    "detected": 206
+   }
+  },
+  "202605211340": {
+   "entries": 204,
+   "by_status": {
+    "ok": 204
+   },
+   "by_body_status": {
+    "detected": 45,
+    "predicted": 159
+   }
+  },
+  "202605211341": {
+   "entries": 206,
+   "by_status": {
+    "ok": 206
+   },
+   "by_body_status": {
+    "detected": 109,
+    "predicted": 97
+   }
+  },
+  "202605211342": {
+   "entries": 206,
+   "by_status": {
+    "ok": 206
+   },
+   "by_body_status": {
+    "predicted": 23,
+    "detected": 183
+   }
+  },
+  "202605211343": {
+   "entries": 404,
+   "by_status": {
+    "ok": 404
+   },
+   "by_body_status": {
+    "detected": 373,
+    "predicted": 31
+   }
+  },
+  "202605211344": {
+   "entries": 405,
+   "by_status": {
+    "ok": 405
+   },
+   "by_body_status": {
+    "detected": 399,
+    "predicted": 6
+   }
+  },
+  "202605211345": {
+   "entries": 206,
+   "by_status": {
+    "ok": 206
+   },
+   "by_body_status": {
+    "detected": 200,
+    "predicted": 6
+   }
+  },
+  "202605211346": {
+   "entries": 7,
+   "by_status": {
+    "ok": 7
+   },
+   "by_body_status": {
+    "predicted": 1,
+    "detected": 6
+   }
+  },
+  "202605211347": {
+   "entries": 405,
+   "by_status": {
+    "ok": 405
+   },
+   "by_body_status": {
+    "detected": 403,
+    "predicted": 2
+   }
+  },
+  "202605211348": {
+   "entries": 7,
+   "by_status": {
+    "ok": 7
+   },
+   "by_body_status": {
+    "detected": 7
+   }
+  },
+  "202605211349": {
+   "entries": 405,
+   "by_status": {
+    "ok": 405
+   },
+   "by_body_status": {
+    "detected": 375,
+    "predicted": 30
+   }
+  },
+  "202605211350": {
+   "entries": 7,
+   "by_status": {
+    "ok": 7
+   },
+   "by_body_status": {
+    "detected": 7
+   }
+  },
+  "202605211351": {
+   "entries": 204,
+   "by_status": {
+    "ok": 204
+   },
+   "by_body_status": {
+    "detected": 200,
+    "predicted": 4
+   }
+  },
+  "202605211352": {
+   "entries": 206,
+   "by_status": {
+    "ok": 206
+   },
+   "by_body_status": {
+    "detected": 174,
+    "predicted": 32
+   }
+  },
+  "202605211353": {
+   "entries": 7,
+   "by_status": {
+    "ok": 7
+   },
+   "by_body_status": {
+    "detected": 2,
+    "predicted": 5
+   }
+  },
+  "202605211354": {
+   "entries": 7,
+   "by_status": {
+    "ok": 7
+   },
+   "by_body_status": {
+    "detected": 4,
+    "predicted": 3
+   }
+  },
+  "202605211355": {
+   "entries": 7,
+   "by_status": {
+    "ok": 7
+   },
+   "by_body_status": {
+    "detected": 3,
+    "predicted": 4
+   }
+  },
+  "202605211356": {
+   "entries": 7,
+   "by_status": {
+    "ok": 7
+   },
+   "by_body_status": {
+    "detected": 2,
+    "predicted": 5
+   }
+  },
+  "202605211357": {
+   "entries": 7,
+   "by_status": {
+    "ok": 7
+   },
+   "by_body_status": {
+    "detected": 3,
+    "predicted": 4
+   }
+  },
+  "202605211358": {
+   "entries": 405,
+   "by_status": {
+    "ok": 405
+   },
+   "by_body_status": {
+    "predicted": 329,
+    "detected": 76
+   }
+  },
+  "202605211359": {
+   "entries": 7,
+   "by_status": {
+    "ok": 7
+   },
+   "by_body_status": {
+    "predicted": 7
+   }
+  }
+ },
+ "created_at": "2026-11-11T19:52:56"
+}

@@ -1,0 +1,191 @@
+[
+ {
+  "time": "2026-05-21T13:57:00.000",
+  "minute": "202605211357",
+  "frame": 0,
+  "sec": 0.0,
+  "kind": "sample",
+  "body": [
+   9.511,
+   68.0
+  ],
+  "body_r": 0.83,
+  "body_status": "detected",
+  "body_score": 38.799,
+  "rel": {
+   "u": 0.1055,
+   "v": -1.1911,
+   "belly_r_rel": 0.0428
+  },
+  "body_zone": [
+   2.981,
+   70.746,
+   7.752,
+   15.503,
+   -82.451
+  ],
+  "fit": "edge"
+ },
+ {
+  "time": "2026-05-21T13:57:09.999",
+  "minute": "202605211357",
+  "frame": 200,
+  "sec": 9.999,
+  "kind": "sample",
+  "body": [
+   9.87,
+   68.312
+  ],
+  "body_r": 0.811,
+  "body_status": "predicted",
+  "body_score": NaN,
+  "rel": {
+   "u": 0.1055,
+   "v": -1.1911,
+   "belly_r_rel": 0.0428
+  },
+  "body_zone": [
+   3.534,
+   71.095,
+   7.572,
+   15.143,
+   -83.353
+  ],
+  "fit": null
+ },
+ {
+  "time": "2026-05-21T13:57:19.998",
+  "minute": "202605211357",
+  "frame": 400,
+  "sec": 19.998,
+  "kind": "sample",
+  "body": [
+   10.068,
+   68.524
+  ],
+  "body_r": 0.802,
+  "body_status": "predicted",
+  "body_score": NaN,
+  "rel": {
+   "u": 0.1055,
+   "v": -1.1911,
+   "belly_r_rel": 0.0428
+  },
+  "body_zone": [
+   3.813,
+   71.304,
+   7.49,
+   14.98,
+   -83.604
+  ],
+  "fit": null
+ },
+ {
+  "time": "2026-05-21T13:57:29.997",
+  "minute": "202605211357",
+  "frame": 600,
+  "sec": 29.997,
+  "kind": "sample",
+  "body": [
+   9.817,
+   67.527
+  ],
+  "body_r": 0.797,
+  "body_status": "predicted",
+  "body_score": NaN,
+  "rel": {
+   "u": 0.1055,
+   "v": -1.1911,
+   "belly_r_rel": 0.0428
+  },
+  "body_zone": [
+   3.486,
+   70.01,
+   7.442,
+   14.884,
+   -81.058
+  ],
+  "fit": null
+ },
+ {
+  "time": "2026-05-21T13:57:39.996",
+  "minute": "202605211357",
+  "frame": 800,
+  "sec": 39.996,
+  "kind": "sample",
+  "body": [
+   9.885,
+   72.971
+  ],
+  "body_r": 2.502,
+  "body_status": "detected",
+  "body_score": 10.843,
+  "rel": {
+   "u": 0.1055,
+   "v": -1.1911,
+   "belly_r_rel": 0.0428
+  },
+  "body_zone": [
+   3.136,
+   71.247,
+   7.676,
+   15.353,
+   -83.246
+  ],
+  "fit": "edge"
+ },
+ {
+  "time": "2026-05-21T13:57:49.995",
+  "minute": "202605211357",
+  "frame": 1000,
+  "sec": 49.995,
+  "kind": "sample",
+  "body": [
+   9.987,
+   67.913
+  ],
+  "body_r": 1.934,
+  "body_status": "detected",
+  "body_score": 9.059,
+  "rel": {
+   "u": 0.1055,
+   "v": -1.1911,
+   "belly_r_rel": 0.0428
+  },
+  "body_zone": [
+   3.278,
+   71.058,
+   7.615,
+   15.23,
+   -83.152
+  ],
+  "fit": "scale"
+ },
+ {
+  "time": "2026-05-21T13:57:59.894",
+  "minute": "202605211357",
+  "frame": 1198,
+  "sec": 59.894,
+  "kind": "sample",
+  "body": [
+   9.057,
+   67.677
+  ],
+  "body_r": 0.833,
+  "body_status": "predicted",
+  "body_score": NaN,
+  "rel": {
+   "u": 0.1055,
+   "v": -1.1911,
+   "belly_r_rel": 0.0428
+  },
+  "body_zone": [
+   2.503,
+   70.42,
+   7.775,
+   15.55,
+   -82.351
+  ],
+  "fit": null
+ }
+]

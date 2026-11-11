@@ -39,10 +39,13 @@ project/
 │   ├── part_3.0/  …
 │   ├── part_3.5/  …
 │   ├── part_4.0/  …
+│   ├── part_4.5/  …
+│   ├── part_5.0/  …
+│   ├── part_5.5/  …
 │   └── tool/      tool_main.py  tool_manifest.py  README.md
 └── output/
     └── {START}_{END}/                          每個時間範圍 = 一次完整執行
-        ├── part_1.5/ … part_4.0/               名稱固定，與 manifest 裡各 part 的路徑無關
+        ├── part_1.5/ … part_5.5/               名稱固定，與 manifest 裡各 part 的路徑無關
 ```
 
 ```mermaid
@@ -50,12 +53,18 @@ flowchart LR
     M[manifest.json] --> P15[part_1.5<br/>files.json]
     P15 --> P20[part_2.0<br/>roi.json / seed.json]
     P20 --> P25[part_2.5<br/>拉正 mp4]
-    P25 --> P30[part_3.0<br/>追蹤]
+    P25 --> P30[part_3.0<br/>追蹤眼睛]
     P20 --> P30
-    P30 --> P35[part_3.5<br/>畫圓影片]
-    P30 --> P40[part_4.0<br/>亮度]
-    P25 --> P35
+    P30 --> P35[part_3.5<br/>畫眼睛]
+    P30 --> P40[part_4.0<br/>找腹部]
+    P20 --> P40
     P25 --> P40
+    P40 --> P45[part_4.5<br/>畫眼睛 + 腹部]
+    P40 --> P50[part_5.0<br/>腹部顏色]
+    P25 --> P35
+    P25 --> P45
+    P25 --> P50
+    P50 --> P55[part_5.5<br/>時間—亮暗度折線圖]
 ```
 
 - 每個時間範圍有自己的 ROI 與種子點；不同範圍的資料夾互不重疊、互不沿用。
@@ -81,7 +90,10 @@ flowchart LR
     "part_2.5": "src/part_2.5",
     "part_3.0": "src/part_3.0",
     "part_3.5": "src/part_3.5",
-    "part_4.0": "src/part_4.0"
+    "part_4.0": "src/part_4.0",
+    "part_4.5": "src/part_4.5",
+    "part_5.0": "src/part_5.0",
+    "part_5.5": "src/part_5.5"
   }
 }
 ```
@@ -97,12 +109,12 @@ flowchart LR
 | `parts` | `{part: 該 part 的資料夾}`；每個 part 的腳本固定是資料夾內的 `{part}_main.py` |
 
 - 除 `project` 以外，**其他路徑都相對於 `project`**；絕對路徑也可以。
-- 欄位必須剛好是上面這些（缺少或多出都報錯），`parts` 的名稱必須剛好是六個 part。
+- 欄位必須剛好是上面這些（缺少或多出都報錯），`parts` 的名稱必須剛好是九個 part。
 - `project` 資料夾必須存在。
 
 ## config.json
 
-最外層只允許六個區塊：`part_1.5`、`part_2.0`、`part_2.5`、`part_3.0`、`part_3.5`、`part_4.0`（沒寫的區塊用預設值）。
+最外層只允許九個區塊：`part_1.5`、`part_2.0`、`part_2.5`、`part_3.0`、`part_3.5`、`part_4.0`、`part_4.5`、`part_5.0`、`part_5.5`（沒寫的區塊用預設值）。
 每個區塊內**沒寫的參數用預設值、寫了不認得的名稱就報錯**，型別與範圍不合會指出是哪個參數。
 
 | 區塊 | 參數與預設 | 完整說明 |
@@ -110,12 +122,15 @@ flowchart LR
 | `part_1.5` | `duration_s`、`tolerance_s` | [part_1.5](../part_1.5/README.md#configjson-的-part_15) |
 | `part_2.0` | `seed_search_px`（另外用到 `part_3.0` 的「找點」參數） | [part_2.0](../part_2.0/README.md#configjson-的-part_20) |
 | `part_2.5` | 無參數 | [part_2.5](../part_2.5/README.md) |
-| `part_3.0` | 找點（`polarity`、`margin`、`r_min`、`r_max`、`sigma_k`、`k_z`、`max_cand`、`z_cap`、`size_ratio_max`、`eye_gap`、`fit_*`）+ 追蹤（`sample_step_s`、`move_tol_px`、`*_search_mul`、`spacing_tol`、`boundary_*`、`move_weight`、`eye_r_ratio`、`body_r_ratio`、`body_zone_*`、`body_k_z_edge`、`body_trust_z`、`*_k_z`、`eye_z_ratio_min`） | [part_3.0](../part_3.0/README.md#configjson-的-part_30) |
-| `part_3.5` | `rmul`、`radd`、`scale`、`thickness_tracked`、`thickness_hold`、`thickness_zone` | [part_3.5](../part_3.5/README.md#configjson-的-part_35) |
-| `part_4.0` | `r`、`ring` | [part_4.0](../part_4.0/README.md#configjson-的-part_40) |
+| `part_3.0` | 找點（`polarity`、`margin`、`r_min`、`r_max`、`sigma_k`、`k_z`、`max_cand`、`z_cap`、`fit_*`）+ 眼睛追蹤（`sample_step_s`、`move_tol_px`、`*_search_mul`、`spacing_tol`、`retry_frames`、`move_weight`、`eye_r_ratio`、`size_ratio_max`、`eye_gap`、`eye_k_z`、`eye_z_ratio_min`） | [part_3.0](../part_3.0/README.md#configjson-的-part_30) |
+| `part_3.5` | `rmul`、`radd`、`scale`、`thickness_tracked`、`thickness_hold` | [part_3.5](../part_3.5/README.md#configjson-的-part_35) |
+| `part_4.0` | 找點（同 part_3.0 的那幾項，各自一份）+ 腹部（`body_r_ratio`、`body_zone_*`、`body_k_z`、`body_k_z_edge`、`body_trust_z`） | [part_4.0](../part_4.0/README.md#configjson-的-part_40) |
+| `part_4.5` | `rmul`、`radd`、`scale`、`thickness_tracked`、`thickness_hold`、`thickness_zone` | [part_4.5](../part_4.5/README.md#configjson-的-part_45) |
+| `part_5.0` | `r`、`ring` | [part_5.0](../part_5.0/README.md#configjson-的-part_50) |
+| `part_5.5` | `width_in`、`height_in`、`dpi`、`line_width`、`show_channels`、`show_bg`、`mark_predicted` | [part_5.5](../part_5.5/README.md#configjson-的-part_55) |
 
 > [!NOTE]
-> 「找點」的參數（`BLOB_DEFAULT_DICT` / `BLOB_RULE_DICT_DICT`）定義在 `tool_main.py`，part_2.0 與 part_3.0 共用同一份；
+> 「找點」的參數（`BLOB_DEFAULT_DICT` / `BLOB_RULE_DICT_DICT`）定義在 `tool_main.py`，part_2.0 與 part_3.0 共用同一份（part_2.0 讀 `part_3.0` 區塊），part_4.0 讀自己的 `part_4.0` 區塊；眼睛專用的 `size_ratio_max`、`eye_gap` 定義在 part_3.0 自己的 `*_main.py`；
 > 各 part 自己的參數（`DEFAULT_PARAM_DICT` / `RULE_DICT_DICT`）定義在各自的 `*_main.py`。規則表支援的型態：`bool`、`int`、`float`、`str`（`choices`）、`float_pair`（`[小, 大]`，小 < 大）；每個數字可以有 `min` / `max` 與是否開區間。
 
 ## 錯誤處理
@@ -190,7 +205,7 @@ flowchart LR
 | `get_args_ns_from_argv_strs` | `prog_str, usage_str, argv_strs, part_range_bool=False` → `Namespace` | `MANIFEST_JSON START_MIN END_MIN`；並讀入 manifest（`args_ns.manifest_dict`）、印出範圍與 manifest 路徑。`part_range_bool=True`（只有 run_all）時多收選填的 `--start` / `--end`（`args_ns.start` / `args_ns.end`，沒給 = `None`） |
 | `run_main_stage` | `run_func, argv_strs` → `None` | 每個 `main()` 的外殼：Ctrl-C → exit 130、預期的錯誤 → exit 1、其他例外 → traceback 後 exit 1 |
 
-常數：`PART_STR_TUPLE`（六個 part 的名稱）、`EXPECTED_ERROR_TUPLE`、`MANIFEST_KEY_STR_SET`、`BANNER_DASH_INT`。
+常數：`PART_STR_TUPLE`（九個 part 的名稱）、`EXPECTED_ERROR_TUPLE`、`MANIFEST_KEY_STR_SET`、`BANNER_DASH_INT`。
 
 ## 函數表：tool_main.py
 
@@ -218,7 +233,7 @@ flowchart LR
 
 | 函數 | 輸入 → 輸出 | 呼叫時機 |
 | --- | --- | --- |
-| `check_config_dict` | `config_dict` → `None` | 讀 config 時；最外層只允許六個 part 區塊 |
+| `check_config_dict` | `config_dict` → `None` | 讀 config 時；最外層只允許九個 part 區塊 |
 | `get_config_dict_from_path` | `config_path` → `dict` | 每個 part 開頭一次 |
 | `check_assets_dir_path` | `assets_dir_path` → `None` | part_1.5 掃描前；manifest 的 `assets` 資料夾必須存在 |
 | `check_num_in_range_by_rule_dict` | `label_str, num, rule_dict` → `None` | 被 `check_value_by_rule_dict` 呼叫 |
@@ -266,10 +281,12 @@ flowchart LR
 | `get_probe_dict_from_mp4_path` | `mp4_path` → `dict` | part_1.5 每分鐘一次；寬高 / fps / 幀數 / 時長（讀封包，不解碼）+ 每幀時間 |
 | `get_sec_floats_from_mp4_path` | `mp4_path` → `list[float]` | part_3.0 每分鐘一次；每一幀的秒數（第一幀 = 0） |
 | `get_first_bgr_arr_from_mp4_path` | `mp4_path` → `arr` | part_1.5 驗證；part_2.0 兩個視窗取每分鐘第一幀 |
-| `gen_index_sec_gray_from_mp4_path` | `mp4_path` → `(idx, sec, gray)` | part_3.0 / part_4.0 逐幀解碼 |
+| `gen_index_sec_gray_from_mp4_path` | `mp4_path` → `(idx, sec, gray)` | part_3.0 / part_4.0 逐幀解碼（灰階） |
+| `gen_index_sec_bgr_from_mp4_path` | `mp4_path` → `(idx, sec, bgr)` | part_5.0 逐幀解碼（彩色，量各通道平均） |
+| `gen_index_sec_arr_from_mp4_path` | `mp4_path, format_str` → `(idx, sec, arr)` | 上面兩個的共同實作；`format_str` 是 PyAV 的像素格式（`gray` / `bgr24`） |
 | `get_stream_and_codec_str_from_container` | `out_container_obj, fps_frac, out_wh, crf_str, qscale_str` → `(stream, codec)` | 編碼影片時；優先 libx264（`crf`），不可用才用 mpeg4（`qscale`） |
 | `get_out_frame_obj_from_bgr_arr` | `bgr_arr, sec_float` → `VideoFrame` | 編碼影片時（時間基準 1/1000 秒） |
-| `run_encode_mp4_stage` | `in_path, out_path, out_wh, convert_func, crf_str, qscale_str` → `dict` | part_2.5 / 3.5 每分鐘一次；逐幀 `convert` 後寫出。先寫 `.tmp.mp4`、成功才改名；失敗會清掉暫存檔 |
+| `run_encode_mp4_stage` | `in_path, out_path, out_wh, convert_func, crf_str, qscale_str` → `dict` | part_2.5 / 3.5 / 4.5 每分鐘一次；逐幀 `convert` 後寫出。先寫 `.tmp.mp4`、成功才改名；失敗會清掉暫存檔 |
 
 ### 拉正（透視變換）
 
@@ -291,7 +308,7 @@ flowchart LR
 | `get_layer_count_int_from_param_dict` | `param_dict` → `int` | DoG 的層數：`max(3, ⌈ln(r_max/r_min)/ln(sigma_k)⌉ + 1)` |
 | `get_sigma_floats_from_param_dict` | `param_dict` → `list[float]` | 每幀；`層數 + 1` 個高斯模糊 σ，等比排列，使各層偵測半徑剛好涵蓋 `[r_min, r_max]` |
 | `get_layer_radius_floats_from_param_dict` | `param_dict` → `list[float]` | 每層偵測的圓半徑 `√2 · √(σᵢσᵢ₊₁)` |
-| `get_scale_msg_str_from_param_dict` | `param_dict` → `str` | part_2.0 / 3.0 啟動時印出卷積的層數、σ 範圍、可偵測的半徑範圍 |
+| `get_scale_msg_str_from_param_dict` | `param_dict` → `str` | part_2.0 / 3.0 / 4.0 啟動時印出卷積的層數、σ 範圍、可偵測的半徑範圍 |
 | `get_blur_arr_list_from_img_arr` | `img_arr, mask_arr, sigma_floats` → `list[arr]` | 每幀；遮罩正規化的高斯模糊 |
 | `get_z_arr_list_from_blur_arr_list` | `blur_arr_list, noise_mask_arr` → `list[arr]` | 每幀；相鄰模糊相減（DoG），以中位數與 MAD 雜訊標準化成 z（雜訊下限 0.25） |
 | `get_cand_tuple_list_from_z_arr_list` | `z_arr_list, region_mask_arr, sigma_floats, k_z_float` → `list` | 每幀；(x, y, 尺度) 三維局部極大值且 z > `k_z` |
@@ -308,18 +325,19 @@ flowchart LR
 | `get_fit_xyr_method_tuple_from_img_arr` | `img_arr, xyr, rmax_float, param_dict` → `(xyr, method)` | 每個點一次；只裁切該點附近再擬合 |
 | `get_xyr_method_z_tuple_or_none_from_click` | `img_arr, click_xy, search_px_float, param_dict` → `tuple \| None` | part_2.0 每次點擊；範圍內的候選以 `min(z, z_cap) − 2·距離/範圍` 選最好的再擬合 |
 
-### 兩眼為基準的相對位置
+### 種子與兩眼為基準的相對位置
 
 | 函數 | 輸入 → 輸出 | 呼叫時機 |
 | --- | --- | --- |
-| `get_rel_dict_from_xyrs` | `right_xyr, left_xyr, belly_xyr` → `dict` | part_2.0 存種子一次；`(u, v)` 與半徑比，縮放與旋轉不變。定義見 [part_2.0](../part_2.0/README.md#腹部相對位置-rel) |
-| `get_belly_xyr_from_rel_and_eyes` | `rel_dict, right_xy, left_xy` → `xyr` | part_3.0 每個被處理的影格；推算腹部位置 |
+| `get_seed_dict_from_part_dir` | `manifest_dict, start, end, need_belly_bool=False` → `dict` | part_3.0（只要兩眼）、part_4.0（要腹部與 `rel`）各一次；讀 `seed.json` 並檢查格式與種子分鐘在範圍內 |
+| `get_rel_dict_from_xyrs` | `right_xyr, left_xyr, belly_xyr` → `dict` | part_2.0 存種子一次、part_4.0 更新 `rel` 時；`(u, v)` 與半徑比，縮放與旋轉不變。定義見 [part_2.0](../part_2.0/README.md#腹部相對位置-rel) |
+| `get_belly_xyr_from_rel_and_eyes` | `rel_dict, right_xy, left_xy` → `xyr` | part_4.0 每個 entry；橢圓的中心（用種子的 `rel`）與推算位置（用目前的 `rel`） |
 
 ### 常數
 
 | 常數 | 意義 |
 | --- | --- |
-| `BLOB_DEFAULT_DICT` / `BLOB_RULE_DICT_DICT` | 「找點」參數的預設值與規則（見 [part_3.0](../part_3.0/README.md#找點與-part_20-共用)） |
+| `BLOB_DEFAULT_DICT` / `BLOB_RULE_DICT_DICT` | 「找點」參數的預設值與規則（見 [part_3.0](../part_3.0/README.md#configjson-的-part_30)） |
 | `XyType` / `WhType` / `XyrType` / `XyrzType` | 座標型別別名 |
 | `NAN_FLOAT` | `float("nan")` |
 | `CONFIG_KEY_STR_SET` | config.json 最外層允許的區塊 |

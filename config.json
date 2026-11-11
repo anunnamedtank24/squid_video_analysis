@@ -26,22 +26,12 @@
     "sample_search_mul": 3.0,
     "frame_search_mul": 1.0,
     "spacing_tol": 0.5,
-    "boundary_search_px": 6.0,
-    "boundary_tol_px": 3.0,
+    "retry_frames": 9,
     "move_weight": 4.0,
     "eye_r_ratio": [
       0.3,
       3.0
     ],
-    "body_r_ratio": [
-      0.3,
-      4.0
-    ],
-    "body_zone_par": 0.4,
-    "body_zone_perp": 0.8,
-    "body_k_z": 2.0,
-    "body_k_z_edge": 8.0,
-    "body_trust_z": 15.0,
     "eye_k_z": 7.0,
     "eye_z_ratio_min": 0.2
   },
@@ -50,14 +40,52 @@
     "radd": 1.0,
     "scale": 4,
     "thickness_tracked": 2,
+    "thickness_hold": 1
+  },
+  "part_4.0": {
+    "polarity": "dark",
+    "margin": 0.1,
+    "r_min": 1.0,
+    "r_max": 14.0,
+    "sigma_k": 1.4,
+    "k_z": 2.5,
+    "max_cand": 12,
+    "z_cap": 200.0,
+    "fit_rays": 24,
+    "fit_rmax_mul": 2.2,
+    "fit_smooth": 0.6,
+    "body_r_ratio": [
+      0.3,
+      4.0
+    ],
+    "body_zone_par": 0.4,
+    "body_zone_perp": 0.8,
+    "body_k_z": 2.0,
+    "body_k_z_edge": 8.0,
+    "body_trust_z": 15.0
+  },
+  "part_4.5": {
+    "rmul": 1.2,
+    "radd": 1.0,
+    "scale": 4,
+    "thickness_tracked": 2,
     "thickness_hold": 1,
     "thickness_zone": 1
   },
-  "part_4.0": {
+  "part_5.0": {
     "r": 3.0,
     "ring": [
       1.0,
       3.0
     ]
+  },
+  "part_5.5": {
+    "width_in": 16.0,
+    "height_in": 8.0,
+    "dpi": 150,
+    "line_width": 0.8,
+    "show_channels": true,
+    "show_bg": false,
+    "mark_predicted": true
   }
 }

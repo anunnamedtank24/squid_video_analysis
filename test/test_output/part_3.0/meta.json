@@ -1,0 +1,373 @@
+{
+ "kind": "part_3.0",
+ "start_min": "202605211317",
+ "end_min": "202605211359",
+ "status": "complete",
+ "params": {
+  "polarity": "dark",
+  "margin": 0.1,
+  "r_min": 1.0,
+  "r_max": 14.0,
+  "sigma_k": 1.4,
+  "k_z": 2.5,
+  "max_cand": 12,
+  "z_cap": 200.0,
+  "fit_rays": 24,
+  "fit_rmax_mul": 2.2,
+  "fit_smooth": 0.6,
+  "sample_step_s": 10.0,
+  "move_tol_px": 1.5,
+  "sample_search_mul": 3.0,
+  "frame_search_mul": 1.0,
+  "spacing_tol": 0.5,
+  "retry_frames": 9,
+  "move_weight": 4.0,
+  "eye_r_ratio": [
+   0.3,
+   3.0
+  ],
+  "eye_k_z": 7.0,
+  "size_ratio_max": 3.0,
+  "eye_gap": 1.2,
+  "eye_z_ratio_min": 0.2
+ },
+ "inputs": {
+  "part_2.5_meta_sha256": "e66133c795923ab66e4792e7b66e051a83cd35e03a1ae8d3dcc869b30885300f",
+  "part_2.0_meta_sha256": "2c0568669f3d9883951050265f8254b89756de4c702d1fa1888ae8c00cd1f85f"
+ },
+ "seed": {
+  "minute": "202605211317",
+  "frame": 0
+ },
+ "minutes": {
+  "202605211317": {
+   "complete": true,
+   "entries": 206,
+   "by_kind": {
+    "seed": 1,
+    "frame": 199,
+    "sample": 6
+   }
+  },
+  "202605211318": {
+   "complete": true,
+   "entries": 7,
+   "by_kind": {
+    "sample": 7
+   }
+  },
+  "202605211319": {
+   "complete": true,
+   "entries": 405,
+   "by_kind": {
+    "sample": 7,
+    "frame": 398
+   }
+  },
+  "202605211320": {
+   "complete": true,
+   "entries": 403,
+   "by_kind": {
+    "sample": 7,
+    "frame": 396
+   }
+  },
+  "202605211321": {
+   "complete": true,
+   "entries": 7,
+   "by_kind": {
+    "sample": 7
+   }
+  },
+  "202605211322": {
+   "complete": true,
+   "entries": 7,
+   "by_kind": {
+    "sample": 7
+   }
+  },
+  "202605211323": {
+   "complete": true,
+   "entries": 7,
+   "by_kind": {
+    "sample": 7
+   }
+  },
+  "202605211324": {
+   "complete": true,
+   "entries": 7,
+   "by_kind": {
+    "sample": 7
+   }
+  },
+  "202605211325": {
+   "complete": true,
+   "entries": 206,
+   "by_kind": {
+    "sample": 7,
+    "frame": 199
+   }
+  },
+  "202605211326": {
+   "complete": true,
+   "entries": 206,
+   "by_kind": {
+    "sample": 7,
+    "frame": 199
+   }
+  },
+  "202605211327": {
+   "complete": true,
+   "entries": 405,
+   "by_kind": {
+    "sample": 7,
+    "frame": 398
+   }
+  },
+  "202605211328": {
+   "complete": true,
+   "entries": 7,
+   "by_kind": {
+    "sample": 7
+   }
+  },
+  "202605211329": {
+   "complete": true,
+   "entries": 403,
+   "by_kind": {
+    "sample": 7,
+    "frame": 396
+   }
+  },
+  "202605211330": {
+   "complete": true,
+   "entries": 405,
+   "by_kind": {
+    "sample": 7,
+    "frame": 398
+   }
+  },
+  "202605211331": {
+   "complete": true,
+   "entries": 205,
+   "by_kind": {
+    "sample": 7,
+    "frame": 198
+   }
+  },
+  "202605211332": {
+   "complete": true,
+   "entries": 7,
+   "by_kind": {
+    "sample": 7
+   }
+  },
+  "202605211333": {
+   "complete": true,
+   "entries": 405,
+   "by_kind": {
+    "sample": 7,
+    "frame": 398
+   }
+  },
+  "202605211334": {
+   "complete": true,
+   "entries": 7,
+   "by_kind": {
+    "sample": 7
+   }
+  },
+  "202605211335": {
+   "complete": true,
+   "entries": 206,
+   "by_kind": {
+    "sample": 7,
+    "frame": 199
+   }
+  },
+  "202605211336": {
+   "complete": true,
+   "entries": 7,
+   "by_kind": {
+    "sample": 7
+   }
+  },
+  "202605211337": {
+   "complete": true,
+   "entries": 405,
+   "by_kind": {
+    "sample": 7,
+    "frame": 398
+   }
+  },
+  "202605211338": {
+   "complete": true,
+   "entries": 7,
+   "by_kind": {
+    "sample": 7
+   }
+  },
+  "202605211339": {
+   "complete": true,
+   "entries": 206,
+   "by_kind": {
+    "sample": 7,
+    "frame": 199
+   }
+  },
+  "202605211340": {
+   "complete": true,
+   "entries": 204,
+   "by_kind": {
+    "sample": 7,
+    "frame": 197
+   }
+  },
+  "202605211341": {
+   "complete": true,
+   "entries": 206,
+   "by_kind": {
+    "sample": 7,
+    "frame": 199
+   }
+  },
+  "202605211342": {
+   "complete": true,
+   "entries": 206,
+   "by_kind": {
+    "sample": 7,
+    "frame": 199
+   }
+  },
+  "202605211343": {
+   "complete": true,
+   "entries": 404,
+   "by_kind": {
+    "sample": 7,
+    "frame": 397
+   }
+  },
+  "202605211344": {
+   "complete": true,
+   "entries": 405,
+   "by_kind": {
+    "sample": 7,
+    "frame": 398
+   }
+  },
+  "202605211345": {
+   "complete": true,
+   "entries": 206,
+   "by_kind": {
+    "sample": 7,
+    "frame": 199
+   }
+  },
+  "202605211346": {
+   "complete": true,
+   "entries": 7,
+   "by_kind": {
+    "sample": 7
+   }
+  },
+  "202605211347": {
+   "complete": true,
+   "entries": 405,
+   "by_kind": {
+    "sample": 7,
+    "frame": 398
+   }
+  },
+  "202605211348": {
+   "complete": true,
+   "entries": 7,
+   "by_kind": {
+    "sample": 7
+   }
+  },
+  "202605211349": {
+   "complete": true,
+   "entries": 405,
+   "by_kind": {
+    "sample": 7,
+    "frame": 398
+   }
+  },
+  "202605211350": {
+   "complete": true,
+   "entries": 7,
+   "by_kind": {
+    "sample": 7
+   }
+  },
+  "202605211351": {
+   "complete": true,
+   "entries": 204,
+   "by_kind": {
+    "sample": 7,
+    "frame": 197
+   }
+  },
+  "202605211352": {
+   "complete": true,
+   "entries": 206,
+   "by_kind": {
+    "sample": 7,
+    "frame": 199
+   }
+  },
+  "202605211353": {
+   "complete": true,
+   "entries": 7,
+   "by_kind": {
+    "sample": 7
+   }
+  },
+  "202605211354": {
+   "complete": true,
+   "entries": 7,
+   "by_kind": {
+    "sample": 7
+   }
+  },
+  "202605211355": {
+   "complete": true,
+   "entries": 7,
+   "by_kind": {
+    "sample": 7
+   }
+  },
+  "202605211356": {
+   "complete": true,
+   "entries": 7,
+   "by_kind": {
+    "sample": 7
+   }
+  },
+  "202605211357": {
+   "complete": true,
+   "entries": 7,
+   "by_kind": {
+    "sample": 7
+   }
+  },
+  "202605211358": {
+   "complete": true,
+   "entries": 405,
+   "by_kind": {
+    "sample": 7,
+    "frame": 398
+   }
+  },
+  "202605211359": {
+   "complete": true,
+   "entries": 7,
+   "by_kind": {
+    "sample": 7
+   }
+  }
+ },
+ "pending": [],
+ "failed": null,
+ "updated_at": "2026-11-11T19:49:21"
+}

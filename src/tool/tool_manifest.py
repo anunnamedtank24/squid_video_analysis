@@ -11,7 +11,7 @@ from collections.abc import Callable
 from datetime import datetime
 from pathlib import Path
 
-PART_STR_TUPLE = ("part_1.5", "part_2.0", "part_2.5", "part_3.0", "part_3.5", "part_4.0")
+PART_STR_TUPLE = ("part_1.5", "part_2.0", "part_2.5", "part_3.0", "part_3.5", "part_4.0", "part_4.5", "part_5.0", "part_5.5")
 MANIFEST_KEY_STR_SET = {"project", "assets", "config", "python", "output", "tool", "parts"}
 EXPECTED_ERROR_TUPLE = (FileNotFoundError, FileExistsError, ValueError, ImportError)
 
@@ -102,7 +102,7 @@ def get_args_ns_from_argv_strs(prog_str: str, usage_str: str, argv_strs: list[st
         parser_obj.add_argument("--start", metavar="PART", default=None,
                                 help="只從這個 part 開始跑（含），例如 2.5 或 part_2.5；預設從 part_1.5")
         parser_obj.add_argument("--end", metavar="PART", default=None,
-                                help="只跑到這個 part 為止（含），例如 3.5 或 part_3.5；預設跑到 part_4.0")
+                                help="只跑到這個 part 為止（含），例如 3.5 或 part_3.5；預設跑到 part_5.5")
     args_ns = parser_obj.parse_args(argv_strs)
     check_min_args(args_ns.start_min, args_ns.end_min)
     args_ns.manifest_dict = get_manifest_dict_from_path(Path(args_ns.manifest))

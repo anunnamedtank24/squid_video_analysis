@@ -48,8 +48,6 @@ BLOB_DEFAULT_DICT: dict = {
     "k_z": 2.5,
     "max_cand": 12,
     "z_cap": 200.0,
-    "size_ratio_max": 3.0,
-    "eye_gap": 1.2,
     "fit_rays": 24,
     "fit_rmax_mul": 2.2,
     "fit_smooth": 0.6,
@@ -63,8 +61,6 @@ BLOB_RULE_DICT_DICT: dict[str, dict] = {
     "k_z": {"type": "float", "min": 0, "min_open": True},
     "max_cand": {"type": "int", "min": 3, "max": 200},
     "z_cap": {"type": "float", "min": 0, "min_open": True},
-    "size_ratio_max": {"type": "float", "min": 1},
-    "eye_gap": {"type": "float", "min": 0},
     "fit_rays": {"type": "int", "min": 8, "max": 360},
     "fit_rmax_mul": {"type": "float", "min": 1, "min_open": True},
     "fit_smooth": {"type": "float", "min": 0, "min_open": True},
@@ -388,6 +384,14 @@ def get_first_bgr_arr_from_mp4_path(mp4_path: Path) -> "np.ndarray":
 
 
 def gen_index_sec_gray_from_mp4_path(mp4_path: Path) -> Iterator[tuple[int, float, "np.ndarray"]]:
+    yield from gen_index_sec_arr_from_mp4_path(mp4_path, "gray")
+
+
+def gen_index_sec_bgr_from_mp4_path(mp4_path: Path) -> Iterator[tuple[int, float, "np.ndarray"]]:
+    yield from gen_index_sec_arr_from_mp4_path(mp4_path, "bgr24")
+
+
+def gen_index_sec_arr_from_mp4_path(mp4_path: Path, format_str: str) -> Iterator[tuple[int, float, "np.ndarray"]]:
     with av.open(str(mp4_path)) as container_obj:
         stream_obj = container_obj.streams.video[0]
         stream_obj.thread_type = "AUTO"
@@ -396,7 +400,7 @@ def gen_index_sec_gray_from_mp4_path(mp4_path: Path) -> Iterator[tuple[int, floa
         for index_int, frame_obj in enumerate(container_obj.decode(stream_obj)):
             sec_float = float(frame_obj.time) if frame_obj.time is not None else index_int / float(fps_frac)
             first_sec_float = sec_float if first_sec_float is None else first_sec_float
-            yield index_int, sec_float - first_sec_float, frame_obj.to_ndarray(format="gray")
+            yield index_int, sec_float - first_sec_float, frame_obj.to_ndarray(format=format_str)
 
 
 def get_stream_and_codec_str_from_container(out_container_obj: "av.container.OutputContainer", fps_frac: Fraction,
@@ -697,6 +701,22 @@ def get_rel_dict_from_xyrs(right_xyr: XyrType, left_xyr: XyrType, belly_xyr: Xyr
             "right_eye_r_rel": right_xyr[2] / dist_float, "left_eye_r_rel": left_xyr[2] / dist_float,
             "eye_dist_px": dist_float,
             "definition": "m=兩眼中點；e_hat=(左眼-右眼)/d；n_hat=(-e_y,e_x)；u=(b-m)·e_hat/d；v=(b-m)·n_hat/d；半徑比=r/d；d=眼距"}
+
+
+def get_seed_dict_from_part_dir(manifest_dict: dict, start_min_str: str, end_min_str: str, need_belly_bool: bool = False) -> dict:
+    seed_dict = get_json_obj_from_path(get_part_dir_path(manifest_dict, start_min_str, end_min_str, "part_2.0") / "seed.json",
+                                       "part_2.0 的 seed.json")
+    key_strs = ("right_eye", "left_eye", "belly") if need_belly_bool else ("right_eye", "left_eye")
+    try:
+        is_ok_bool = (seed_dict["kind"] == "seed" and start_min_str <= seed_dict["minute"] <= end_min_str
+                      and all(len(seed_dict[key_str]) == 3 and all(is_finite_num(num) for num in seed_dict[key_str])
+                              for key_str in key_strs)
+                      and (not need_belly_bool or all(is_finite_num(seed_dict["rel"][key_str]) for key_str in ("u", "v", "belly_r_rel"))))
+    except (KeyError, TypeError):
+        is_ok_bool = False
+    if not is_ok_bool:
+        raise ValueError(f"[Error] part_2.0 的 seed.json 格式不對，或種子分鐘不在 {start_min_str} ~ {end_min_str} 內。請重新執行 part_2.0")
+    return seed_dict
 
 
 def get_belly_xyr_from_rel_and_eyes(rel_dict: dict, right_xy: XyType, left_xy: XyType) -> XyrType:

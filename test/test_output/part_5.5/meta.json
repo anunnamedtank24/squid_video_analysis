@@ -1,0 +1,31 @@
+{
+ "kind": "part_5.5",
+ "start_min": "202605211317",
+ "end_min": "202605211359",
+ "params": {
+  "width_in": 16.0,
+  "height_in": 8.0,
+  "dpi": 150,
+  "line_width": 0.8,
+  "show_channels": true,
+  "show_bg": false,
+  "mark_predicted": true
+ },
+ "inputs": {
+  "part_5.0_meta_sha256": "d25058aaf6e7a329363a87dbb1e4f5dce449663809e4e984b05be11cf137ee9a"
+ },
+ "png": "brightness.png",
+ "stat": {
+  "points": 7455,
+  "points_ok": 7455,
+  "points_predicted": 908,
+  "first_time": "2026-05-21T13:17:00.000",
+  "last_time": "2026-05-21T13:59:59.894",
+  "mean_gray": {
+   "min": 79.731,
+   "max": 222.414,
+   "average": 142.949
+  }
+ },
+ "created_at": "2026-11-11T20:01:30"
+}
