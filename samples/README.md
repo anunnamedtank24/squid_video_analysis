@@ -6,11 +6,14 @@ project/
 │   ├── 17{...}.mp4
 │   ├── ...
 │   └── 59{...}.mp4
-└── output/202605211317_202605211359/
-    ├── part_1.5
-    ├── ...
+├── output/202605211317_202605211359/
+│   ├── part_1.5/
+│   ├── ...
+│   └── part_5.5/
+└── samples
+    └──output
 
 再執行
 cd project
-mkdir -p test/output/
-cp -r output/202605211317_202605211359/ test/test_output/202605211317_202605211359
+mkdir -p samples/output/
+cp -r output/202605211317_202605211359/ samples/output/202605211317_202605211359

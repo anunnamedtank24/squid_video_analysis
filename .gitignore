@@ -1,5 +1,5 @@
-assets/
-venv/
-output/
+/assets/
+/venv/
+/output/
 __pycache__/
 .DS_Store
