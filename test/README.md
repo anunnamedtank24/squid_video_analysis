@@ -12,7 +12,5 @@ project/
 
 再執行
 cd project
-mkdir -p test/assets/2026052122/
-cp -r assets/2026052122/2026052113/ test/assets/2026052122/
 mkdir -p test/output/
-cp -r output/202605211317_202605211359/ test/output/
+cp -r output/202605211317_202605211359/ test/test_output/202605211317_202605211359
