@@ -1,0 +1,16 @@
+{
+  "project": ".",
+  "assets": "assets",
+  "config": "config.json",
+  "python": "venv/bin/python",
+  "output": "output",
+  "tool": "src/tool",
+  "parts": {
+    "part_1.5": "src/part_1.5",
+    "part_2.0": "src/part_2.0",
+    "part_2.5": "src/part_2.5",
+    "part_3.0": "src/part_3.0",
+    "part_3.5": "src/part_3.5",
+    "part_4.0": "src/part_4.0"
+  }
+}

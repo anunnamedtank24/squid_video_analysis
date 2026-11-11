@@ -1,0 +1,63 @@
+{
+  "part_1.5": {
+    "duration_s": 60.0,
+    "tolerance_s": 2.0
+  },
+  "part_2.0": {
+    "seed_search_px": 10.0
+  },
+  "part_2.5": {},
+  "part_3.0": {
+    "polarity": "dark",
+    "margin": 0.1,
+    "r_min": 1.0,
+    "r_max": 14.0,
+    "sigma_k": 1.4,
+    "k_z": 2.5,
+    "max_cand": 12,
+    "z_cap": 200.0,
+    "size_ratio_max": 3.0,
+    "eye_gap": 1.2,
+    "fit_rays": 24,
+    "fit_rmax_mul": 2.2,
+    "fit_smooth": 0.6,
+    "sample_step_s": 10.0,
+    "move_tol_px": 1.5,
+    "sample_search_mul": 3.0,
+    "frame_search_mul": 1.0,
+    "spacing_tol": 0.5,
+    "boundary_search_px": 6.0,
+    "boundary_tol_px": 3.0,
+    "move_weight": 4.0,
+    "eye_r_ratio": [
+      0.3,
+      3.0
+    ],
+    "body_r_ratio": [
+      0.3,
+      4.0
+    ],
+    "body_zone_par": 0.4,
+    "body_zone_perp": 0.8,
+    "body_k_z": 2.0,
+    "body_k_z_edge": 8.0,
+    "body_trust_z": 15.0,
+    "eye_k_z": 7.0,
+    "eye_z_ratio_min": 0.2
+  },
+  "part_3.5": {
+    "rmul": 1.2,
+    "radd": 1.0,
+    "scale": 4,
+    "thickness_tracked": 2,
+    "thickness_hold": 1,
+    "thickness_zone": 1
+  },
+  "part_4.0": {
+    "r": 3.0,
+    "ring": [
+      1.0,
+      3.0
+    ]
+  }
+}
