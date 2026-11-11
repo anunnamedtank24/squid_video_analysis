@@ -81,7 +81,7 @@ project/
 ├── output/                             gitignore
 │   └── {START}_{END}/                  每個時間範圍 = 一次完整執行
 │       └── part_1.5/ … part_5.5/       資料夾名稱固定
-└── test/                               可用於執行的 assets 及其 output
+└── sample/                             搬遷測試結果 output
 ```
 
 ### 規則
